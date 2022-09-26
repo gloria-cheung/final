@@ -49,11 +49,13 @@ export default function LoginPage() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-
             <Button disabled={loading} className="w-100" type="submit">
               Log In
             </Button>
           </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
