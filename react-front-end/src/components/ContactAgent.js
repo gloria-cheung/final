@@ -2,20 +2,26 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 
-export default function ContactAgent() {
+export default function ContactAgent(props) {
   const [state, setState] = useState({
     message: { fullname: "", phone: "", email: "", message: "" },
     submitting: false,
     error: false,
+    isSubmitted: false,
   });
+
+  const { zpid, attributionInfo } = props;
 
   const fetchSMS = () => {
     axios
-      .post("http://localhost:8080/api/messages", state.message)
+      .post("http://localhost:8080/api/messages", {
+        ...state.message,
+        zpid: zpid,
+      })
       .then((res) => {
-        console.log(res);
         if (res.data.success) {
           setState({
             error: false,
@@ -26,6 +32,7 @@ export default function ContactAgent() {
               email: "",
               message: "",
             },
+            isSubmitted: true,
           });
         } else {
           setState({
@@ -35,6 +42,18 @@ export default function ContactAgent() {
         }
       });
   };
+
+  const checkFormValidity = () => {
+    if (Object.values(state.message).every((val) => val !== "")) {
+      fetchSMS();
+    } else {
+      setState((prev) => ({
+        ...prev,
+        error: true,
+      }));
+    }
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
     setState((prev) => ({
@@ -42,7 +61,8 @@ export default function ContactAgent() {
       submitting: true,
     }));
 
-    fetchSMS();
+    //check to see if form is valid
+    checkFormValidity();
   };
 
   const changeHandler = (e) => {
@@ -56,7 +76,9 @@ export default function ContactAgent() {
     <Card>
       <Card.Body>
         <Card.Title>Contact Agent</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">agent name</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">
+          {attributionInfo.agentName}
+        </Card.Subtitle>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3">
             <Form.Label>Full Name</Form.Label>
@@ -106,6 +128,16 @@ export default function ContactAgent() {
             Contact Agent
           </Button>
         </Form>
+        {state.isSubmitted && (
+          <Alert className="mt-4" variant="light">
+            Message Sent to Agent!
+          </Alert>
+        )}
+        {state.error && (
+          <Alert className="mt-4" variant="warning">
+            Please Try Again. Message not Sent
+          </Alert>
+        )}
       </Card.Body>
     </Card>
   );
