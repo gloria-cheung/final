@@ -115,7 +115,12 @@ export default function ModalContent(props) {
                   </GoogleMap>
                 )}
               </Card>
-              <ContactAgent />
+              {data.attributionInfo && (
+                <ContactAgent
+                  zpid={data.zpid}
+                  attributionInfo={data.attributionInfo}
+                />
+              )}
             </Col>
           </Row>
         </Container>
