@@ -2,24 +2,25 @@ import React from "react";
 import classes from "./AgentsContainerItem.module.css";
 
 export default function AgentsContainerItem(props) {
+  const { data, phoneNumber, agentName, agentGroup, mapImg, agentImg } = props;
+  console.log(data);
   return (
     <>
       <hr />
       <div className={classes.container}>
         <div className={classes.agentsContainer}>
-          <div className={classes.photo}>photo</div>
-          <div className={classes.agentName}>Agent Name - Agent Group</div>
-          <div className={classes.phoneNumber}>Agent Phone Number</div>
-          <div className={classes.group}>Agent Group</div>
+          <img className={classes.photo} src={agentImg} />
+          <div className={classes.agentName}>{agentName}</div>
+          <div className={classes.phoneNumber}>{phoneNumber}</div>
+          <div className={classes.group}>{agentGroup}</div>
         </div>
         <div className={classes.locationContainer}>
-          <div className={classes.map}>Image Of Map</div>
+          <img className={classes.map} src={mapImg} />
         </div>
         <div className={classes.ProfileContainer}>
           <div className={classes.profile}>View Profile</div>
         </div>
       </div>
-      <hr />
     </>
   );
 }
