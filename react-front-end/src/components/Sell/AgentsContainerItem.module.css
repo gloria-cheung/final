@@ -1,6 +1,6 @@
 .container {
   /* background-color: grey; */
-  height: 90px;
+  height: 120px;
   display: grid;
   grid-template-columns: 1fr 1fr 0.5fr;
 }
@@ -14,10 +14,11 @@
 .photo {
   grid-column: 1;
   grid-row: 1/-1;
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
   justify-self: center;
   align-self: center;
+  border-radius: 50%;
 }
 
 .agentName {
