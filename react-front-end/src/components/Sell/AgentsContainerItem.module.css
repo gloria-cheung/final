@@ -1,0 +1,51 @@
+.container {
+  /* background-color: grey; */
+  height: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.5fr;
+}
+
+.agentsContainer {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.photo {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.agentName {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.phoneNumber {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.group {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.locationContainer {
+  grid-column: 2;
+  display: grid;
+}
+
+.map {
+  justify-self: start;
+  align-self: center;
+}
+
+.ProfileContainer {
+  display: grid;
+}
+
+.profile {
+  justify-self: start;
+  align-self: center;
+}
