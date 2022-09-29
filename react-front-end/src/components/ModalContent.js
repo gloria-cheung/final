@@ -7,11 +7,14 @@ import Modal from "react-bootstrap/Modal";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/esm/Image";
+import Alert from "react-bootstrap/Alert";
 import Fact from "./Fact";
 import ContactAgent from "./ContactAgent";
+import { useAuth } from "../contexts/AuthContext";
 import "./ModalContent.scss";
 
 export default function ModalContent(props) {
+  const { currentUser } = useAuth();
   const { handleClose, data, show } = props;
 
   const { isLoaded } = useLoadScript({
@@ -115,7 +118,19 @@ export default function ModalContent(props) {
                   </GoogleMap>
                 )}
               </Card>
-              <ContactAgent />
+              {data.attributionInfo && currentUser ? (
+                <ContactAgent
+                  zpid={data.zpid}
+                  attributionInfo={data.attributionInfo}
+                />
+              ) : (
+                ""
+              )}
+              {!currentUser && (
+                <Alert variant="warning" className="mt-3">
+                  Please Sign in to Contact Agent
+                </Alert>
+              )}
             </Col>
           </Row>
         </Container>
