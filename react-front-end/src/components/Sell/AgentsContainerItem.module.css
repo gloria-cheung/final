@@ -13,7 +13,11 @@
 
 .photo {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1/-1;
+  height: 75px;
+  width: 75px;
+  justify-self: center;
+  align-self: center;
 }
 
 .agentName {
@@ -39,6 +43,8 @@
 .map {
   justify-self: start;
   align-self: center;
+  height: 80px;
+  width: 350px;
 }
 
 .ProfileContainer {
