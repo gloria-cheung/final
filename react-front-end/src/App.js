@@ -1,21 +1,21 @@
 import React from "react";
-import TopBar from "./components/TopBar";
-import "./App.scss";
-import Home from "./components/Home";
-import HomesRent from "./components/HomesRent";
-import Sell from "./components/Sell/Sell";
-import HomesSale from "./components/HomesSale";
-import LoginPage from "./components/LoginPage";
 import { Route, Routes } from "react-router-dom";
+import PrivateRoutes from "./PrivateRoutes";
+import TopBar from "./components/TopBar";
+import Home from "./components/Home/Home";
+import HomesRent from "./components/Listings/HomesRent";
+import Sell from "./components/Sell/Sell";
+import HomesSale from "./components/Listings/HomesSale";
+import LoginPage from "./components/LoginPage";
 import RegistrationPage from "./components/RegistrationPage";
 import Dashboard from "./components/Dashboard";
-import PrivateRoutes from "./PrivateRoutes";
 import ForgotPassword from "./components/ForgotPassword";
 import FindAgent from "./components/Sell/FindAgent";
 import NotFound from "./components/NotFound";
 import AgentProfile from "./components/AgentProfile/AgentProfile";
+import "./App.scss";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <TopBar />

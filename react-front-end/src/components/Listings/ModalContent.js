@@ -10,7 +10,7 @@ import Image from "react-bootstrap/esm/Image";
 import Alert from "react-bootstrap/Alert";
 import Fact from "./Fact";
 import ContactAgent from "./ContactAgent";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import "./ModalContent.scss";
 
 export default function ModalContent(props) {
