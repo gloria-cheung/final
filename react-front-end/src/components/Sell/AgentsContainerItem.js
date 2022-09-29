@@ -9,13 +9,17 @@ export default function AgentsContainerItem(props) {
       <hr />
       <div className={classes.container}>
         <div className={classes.agentsContainer}>
-          <img className={classes.photo} src={agentImg} />
+          <img className={classes.photo} src={agentImg} alt="agent." />
           <div className={classes.agentName}>{agentName}</div>
           <div className={classes.phoneNumber}>{phoneNumber}</div>
           <div className={classes.group}>{agentGroup}</div>
         </div>
         <div className={classes.locationContainer}>
-          <img className={classes.map} src={mapImg} />
+          <img
+            className={classes.map}
+            src={mapImg}
+            alt="map where agent operates"
+          />
         </div>
         <div className={classes.ProfileContainer}>
           <div className={classes.profile}>View Profile</div>
