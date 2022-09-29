@@ -11,6 +11,7 @@ export default function FindAgent() {
   const [specialties, setSpecialties] = useState("Any");
   const [language, setLanguage] = useState("English");
   const [data, setData] = useState({});
+  const [show, setShow] = useState(null);
 
   const fetchData = () => {
     const options = {
@@ -33,6 +34,8 @@ export default function FindAgent() {
       .then((res) => {
         setData(res.data);
       })
+      .then(setShow(true))
+      .then(console.log(data))
       .catch((error) => {
         console.error(error);
       });
@@ -52,7 +55,7 @@ export default function FindAgent() {
         setLanguage={setLanguage}
         submitHandler={submitHandler}
       />
-      <AgentsContainer data={data} />
+      {show && <AgentsContainer data={data} />}
     </div>
   );
 }
