@@ -12,11 +12,15 @@ import Dashboard from "./components/Dashboard";
 import PrivateRoutes from "./PrivateRoutes";
 import ForgotPassword from "./components/ForgotPassword";
 import FindAgent from "./components/Sell/FindAgent";
+import NotFound from "./components/NotFound";
+import AgentProfile from "./components/AgentProfile/AgentProfile";
 
 function App(props) {
   return (
     <div className="App">
       <TopBar />
+
+      {/* Routes that ANY user can access */}
       <Routes>
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/" element={<Home />} />
@@ -24,10 +28,14 @@ function App(props) {
         <Route path="/homes_sale" element={<HomesSale />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegistrationPage />} />
+        <Route path="*" element={<NotFound />} />
+
+        {/* Routes that the user needs to be logged in to access */}
         <Route element={<PrivateRoutes />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/find-an-agent" element={<FindAgent />} />
+          <Route path="/profile/:username" element={<AgentProfile />} />
         </Route>
       </Routes>
     </div>

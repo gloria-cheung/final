@@ -1,0 +1,9 @@
+.container {
+  margin-top: 5rem;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #f1f1f4;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+}
