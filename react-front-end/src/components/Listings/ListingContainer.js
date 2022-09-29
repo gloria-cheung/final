@@ -1,7 +1,6 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
+import { Row, ListGroup } from "react-bootstrap";
 import ListingItem from "./ListingItem";
-import ListGroup from "react-bootstrap/ListGroup";
 
 export default function ListingContainer(props) {
   let data = props.data;

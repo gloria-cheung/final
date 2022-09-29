@@ -1,13 +1,15 @@
 import React from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Modal from "react-bootstrap/Modal";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/esm/Image";
-import Alert from "react-bootstrap/Alert";
+import {
+  Container,
+  Row,
+  Col,
+  Modal,
+  Card,
+  Button,
+  Image,
+  Alert,
+} from "react-bootstrap";
 import Fact from "./Fact";
 import ContactAgent from "./ContactAgent";
 import { useAuth } from "../../contexts/AuthContext";

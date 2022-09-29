@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ListGroup from "react-bootstrap/ListGroup";
-import Badge from "react-bootstrap/Badge";
+import { ListGroup, Badge } from "react-bootstrap";
 import axios from "axios";
 import ModalContent from "./ModalContent";
 import "./ListingItem.scss";
