@@ -9,9 +9,9 @@ export default function SellBottom() {
     navigate("/find-an-agent");
   }
   return (
-    <React.Fragment className={classes.container}>
+    <div className={classes.container}>
       <h1>Start Selling with an Agent</h1>
       <Button onClick={clickHandler}>Find an Agent</Button>
-    </React.Fragment>
+    </div>
   );
 }
