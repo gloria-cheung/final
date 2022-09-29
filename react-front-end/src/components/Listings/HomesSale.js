@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import SearchBar from "./SearchBar";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/esm/Container";
+import { Row, Container } from "react-bootstrap";
 import ListingContainer from "./ListingContainer";
 import axios from "axios";
 import "./HomesRent.scss";

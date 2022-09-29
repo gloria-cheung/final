@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Card from "react-bootstrap/Card";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
+import { Card, Form, Button, Alert } from "react-bootstrap";
 import axios from "axios";
 
 export default function ContactAgent(props) {
