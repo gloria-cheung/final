@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Form, Card, Button, Col, Row } from "react-bootstrap";
-import Axios from "axios";
+import React from "react";
+import { Form, Button, Col, Row } from "react-bootstrap";
+
 import classes from "./SearchBarFindAgent.module.css";
 
 export default function SearchBarFindAgent({
