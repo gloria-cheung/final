@@ -1,3 +1,11 @@
 .card_img {
   opacity: 0.7;
 }
+@media (max-width: 768px) {
+  .card_img {
+    display: none;
+  }
+  .cardItem {
+    border-bottom: 1px solid #dee2e6;
+  }
+}
