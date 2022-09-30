@@ -33,10 +33,10 @@ const CardItem = () => {
     },
   ];
   const data = items.map((item) => (
-    <Col key={items.indexOf(item)}>
-      <Card>
+    <Col key={items.indexOf(item)} xs={12} md={4}>
+      <Card className="border-0">
         <Card.Img className="card_img" variant="top" src={item.image} />
-        <Card.Body>
+        <Card.Body className="cardItem">
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>{item.description}</Card.Text>
           <Button as="a" variant="primary" href={item.link}>
