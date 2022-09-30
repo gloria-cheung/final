@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 import SearchBar from "./SearchBar";
-import { Row, Container } from "react-bootstrap";
+import MapContainer from "./MapContainer";
 import ListingContainer from "./ListingContainer";
+import { Row, Container, Col } from "react-bootstrap";
 import axios from "axios";
-import "./HomesRent.scss";
 
 export default function Homes_Sale() {
   const [location, setLocation] = useState("");
@@ -18,10 +17,7 @@ export default function Homes_Sale() {
     isCondo: true,
     isTownhouse: true,
   });
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLEMAP_API_KEY,
-  });
+  const [markers, setMarkers] = useState([]);
 
   const fetchData = () => {
     const options = {
@@ -43,7 +39,16 @@ export default function Homes_Sale() {
     axios
       .request(options)
       .then((res) => {
-        console.log(res.data.results);
+        // filter out from API any data that has no long and lat values
+        let filteredMarkersArr = res.data.results.filter(
+          (listing) => listing.latitude && listing.longitude
+        );
+        let markersArr = filteredMarkersArr.map((listing) => ({
+          lat: listing.latitude,
+          lng: listing.longitude,
+          zpid: listing.zpid,
+        }));
+        setMarkers(markersArr);
         setData(res.data.results);
       })
       .catch((error) => {
@@ -66,15 +71,10 @@ export default function Homes_Sale() {
         setHomeType={setHomeType}
       />
       <Row className="p-0 m-0 border-top">
-        {!Object.values(data).length && isLoaded && (
-          <GoogleMap
-            zoom={4}
-            center={{ lat: 49, lng: -106 }}
-            mapContainerClassName="map-container"
-          ></GoogleMap>
-        )}
-
-        <ListingContainer data={data} />
+        <Col>{markers.length > 0 && <MapContainer markers={markers} />}</Col>
+        <Col>
+          <ListingContainer data={data} />
+        </Col>
       </Row>
     </Container>
   );
