@@ -20,14 +20,17 @@ export default function AgentsContainer({ data }) {
   }
   return (
     <React.Fragment>
-      <div className={classes.container}>
-        <div className={classes.header}>
-          <div className={classes.agent}>Agents</div>
-          <div className={classes.location}>Location</div>
-          <div className={classes.profile}>Profile</div>
-        </div>
-        {agents}
-      </div>
+      <table class="table table-responsive mt-5 w-75 mx-auto">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Agent</th>
+            <th scope="col">Location</th>
+            <th scope="col">Profile</th>
+          </tr>
+        </thead>
+        <tbody>{agents}</tbody>
+      </table>
     </React.Fragment>
   );
 }
