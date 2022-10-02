@@ -39,6 +39,10 @@ export default function AgentProfile() {
           <AgentReview />
         </Row> */}
       </Container>
+      <Row className="mt-5">
+        <h2>Reviews & Ratings</h2>
+        <div>Placeholder for Reviews</div>
+      </Row>
     </React.Fragment>
   );
 }
