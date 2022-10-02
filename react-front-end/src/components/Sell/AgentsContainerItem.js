@@ -1,30 +1,28 @@
 import React from "react";
 import classes from "./AgentsContainerItem.module.css";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function AgentsContainerItem(props) {
-  const { data, phoneNumber, agentName, agentGroup, mapImg, agentImg } = props;
-  console.log(data);
+  const { phoneNumber, agentName, agentGroup, mapImg, agentImg } = props;
+
   return (
-    <>
-      <hr />
-      <div className={classes.container}>
-        <div className={classes.agentsContainer}>
-          <img className={classes.photo} src={agentImg} alt="agent." />
-          <div className={classes.agentName}>{agentName}</div>
-          <div className={classes.phoneNumber}>{phoneNumber}</div>
-          <div className={classes.group}>{agentGroup}</div>
-        </div>
-        <div className={classes.locationContainer}>
-          <img
-            className={classes.map}
-            src={mapImg}
-            alt="map where agent operates"
-          />
-        </div>
-        <div className={classes.ProfileContainer}>
-          <div className={classes.profile}>View Profile</div>
-        </div>
-      </div>
-    </>
+    <tr>
+      <th scope="row">
+        <img src={agentImg} style={{ borderRadius: "50%" }} />
+      </th>
+      <td className="text-center">
+        <h6 className="mt-5">{agentName}</h6>
+        <div>{phoneNumber}</div>
+        <div>{agentGroup}</div>
+      </td>
+      <td>
+        <img src={mapImg} className="mt-2" />
+      </td>
+      <td>
+        <h1 className="mt-5">
+          <FaLongArrowAltRight />
+        </h1>
+      </td>
+    </tr>
   );
 }
