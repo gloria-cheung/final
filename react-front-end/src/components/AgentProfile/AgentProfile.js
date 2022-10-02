@@ -5,25 +5,28 @@ import AgentHeading from "./AgentHeading";
 import classes from "./AgentProfile.module.css";
 import AgentAboutMe from "./AgentAboutMe";
 import AgentForSale from "./AgentForSale";
-import AgentReviewsContainer from "./AgentReviewsContainer";
-import AgentReview from "./AgentReview";
+// import AgentReviewsContainer from "./AgentReviewsContainer";
+// import AgentReview from "./AgentReview";
 
 export default function AgentProfile() {
   return (
     <React.Fragment>
       <Container className={classes.container}>
         <Row>
-          <Col xs={12} md={8}>
+          <Col xs={12}>
             <AgentHeading />
           </Col>
-          <Col xs={6} md={4}>
+          {/* <Col xs={6}>
             <Aside />
-          </Col>
+          </Col> */}
         </Row>
         <Row className="mt-3">
-          <Button variant="primary" size="lg" className="d-lg-none">
+          <Button variant="primary" size="lg" className="mx-auto">
             Contact Agent
           </Button>
+          <Row>
+            <Aside />
+          </Row>
         </Row>
         <Row className="mt-5">
           <AgentAboutMe />
@@ -31,10 +34,10 @@ export default function AgentProfile() {
         <Row className="mt-5">
           <AgentForSale />
         </Row>
-        <Row className="mt-5">
+        {/* <Row className="mt-5">
           <AgentReviewsContainer />
           <AgentReview />
-        </Row>
+        </Row> */}
       </Container>
     </React.Fragment>
   );
