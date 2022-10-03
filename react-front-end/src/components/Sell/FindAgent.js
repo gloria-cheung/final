@@ -5,6 +5,7 @@ import axios from "axios";
 // import classes from "./FindAgent.module.css";
 import SearchBarFindAgent from "./SearchBarFindAgent";
 import AgentsContainer from "./AgentsContainer";
+import Loading from "../Loading";
 
 export default function FindAgent() {
   const [location, setLocation] = useState("");
@@ -13,6 +14,7 @@ export default function FindAgent() {
   const [language, setLanguage] = useState("English");
   const [data, setData] = useState({});
   const [show, setShow] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
     const options = {
@@ -34,6 +36,7 @@ export default function FindAgent() {
       .request(options)
       .then((res) => {
         setData(res.data);
+        setLoading(false);
       })
       .then(setShow(true))
       .then(console.log(data))
@@ -44,6 +47,7 @@ export default function FindAgent() {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    setLoading(true);
     fetchData();
   };
 
@@ -56,6 +60,7 @@ export default function FindAgent() {
         setLanguage={setLanguage}
         submitHandler={submitHandler}
       />
+      {loading && <Loading />}
       {/* {show && <AgentsContainer data={data} />} */}
       <AgentsContainer data={data} />
     </Container>
