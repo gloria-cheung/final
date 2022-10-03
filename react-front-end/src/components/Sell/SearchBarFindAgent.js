@@ -1,8 +1,6 @@
 import React from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
-import classes from "./SearchBarFindAgent.module.css";
-
 export default function SearchBarFindAgent({
   submitHandler,
   setLocation,
@@ -11,12 +9,12 @@ export default function SearchBarFindAgent({
   setLanguage,
 }) {
   return (
-    <div className={classes.container}>
-      <Form size="md" className={classes.searchBar} onSubmit={submitHandler}>
+    <div className="ms-2 mt-2 pb-2">
+      <Form size="sm" onSubmit={submitHandler}>
         <Row className="align-items-center">
           <Col xs="auto">
             <Form.Control
-              size="md"
+              size="sm"
               type="text"
               placeholder="Location"
               id="location"
@@ -26,7 +24,7 @@ export default function SearchBarFindAgent({
           </Col>
           <Col xs="auto">
             <Form.Control
-              size="md"
+              size="sm"
               type="text"
               id="beds"
               name="beds"
@@ -36,7 +34,7 @@ export default function SearchBarFindAgent({
           </Col>
           <Col xs="auto">
             <Form.Select
-              size="md"
+              size="sm"
               id="specialties"
               name="specialties"
               onChange={(e) => setSpecialties(e.target.value)}
@@ -53,7 +51,7 @@ export default function SearchBarFindAgent({
           </Col>
           <Col xs="auto">
             <Form.Select
-              size="md"
+              size="sm"
               id="language"
               name="language"
               onChange={(e) => setLanguage(e.target.value)}
@@ -86,7 +84,7 @@ export default function SearchBarFindAgent({
           </Col>
 
           <Col xs="auto">
-            <Button type="submit" className="" size="md">
+            <Button type="submit" size="sm">
               Search
             </Button>
           </Col>

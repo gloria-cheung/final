@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./AgentsContainerItem.module.css";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function AgentsContainerItem(props) {
@@ -8,7 +7,7 @@ export default function AgentsContainerItem(props) {
   return (
     <tr>
       <th scope="row">
-        <img src={agentImg} style={{ borderRadius: "50%" }} />
+        <img src={agentImg} style={{ borderRadius: "50%" }} alt="agentImage" />
       </th>
       <td className="text-center">
         <h6 className="mt-5">{agentName}</h6>
@@ -16,7 +15,7 @@ export default function AgentsContainerItem(props) {
         <div>{agentGroup}</div>
       </td>
       <td>
-        <img src={mapImg} className="mt-2" />
+        <img src={mapImg} className="mt-2" alt="agentMap" />
       </td>
       <td>
         <h1 className="mt-5">

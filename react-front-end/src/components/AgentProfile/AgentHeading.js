@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Aside from "./Aside";
 
 export default function AgentHeading() {
   return (
@@ -12,6 +13,7 @@ export default function AgentHeading() {
               borderRadius: "50%",
             }}
             src="https://photos.zillowstatic.com/h_l/IS3jrgiva108c21000000000.jpg"
+            alt="agentImage"
           />
         </Col>
         <Col xs={12} className="mt-3 ">
@@ -20,7 +22,12 @@ export default function AgentHeading() {
         </Col>
       </Row>
       <Row className="mt-2 ">
-        <div>⭐️⭐️⭐️⭐️⭐️ 5.0 | 100 Reviews</div>
+        <div>
+          <span role="img" aria-label="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>{" "}
+          5.0 | 100 Reviews
+        </div>
       </Row>
     </Container>
   );
