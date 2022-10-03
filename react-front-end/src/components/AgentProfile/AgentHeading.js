@@ -1,7 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-export default function AgentHeading() {
+export default function AgentHeading(props) {
+  const { data } = props;
+  console.log("data", data);
   return (
     <Container className="mt-3">
       <Row>
@@ -15,8 +17,10 @@ export default function AgentHeading() {
           />
         </Col>
         <Col xs={12} className="mt-3 ">
-          <h4>John Smith - Real Estate Agent</h4>
-          <div>Real Esate Agent</div>
+          <h4>Name</h4>
+          <h4>{data ? data.about.description : "Not Working"}</h4>
+          {/* <div>{data.about.description}</div> */}
+          <div>Real Estate Agent</div>
         </Col>
       </Row>
       <Row className="mt-2 ">

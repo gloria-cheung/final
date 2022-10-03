@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 
 export default function AgentProfile() {
   const { userId } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState();
 
   function fetchData() {
     const options = {
@@ -29,7 +29,6 @@ export default function AgentProfile() {
       .then((res) => {
         setData(res.data);
       })
-      .then(console.log(data))
       .catch((error) => {
         console.error(error);
       });
@@ -44,7 +43,7 @@ export default function AgentProfile() {
       <Container className={classes.container}>
         <Row>
           <Col xs={12}>
-            <AgentHeading />
+            <AgentHeading data={data} />
           </Col>
           {/* <Col xs={6}>
             <Aside />
