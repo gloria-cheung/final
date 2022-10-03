@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./AgentsContainer.module.css";
 import AgentsContainerItem from "./AgentsContainerItem";
 import { v4 as uuidv4 } from "uuid";
 
@@ -20,7 +19,7 @@ export default function AgentsContainer({ data }) {
   }
   return (
     <React.Fragment>
-      <table class="table table-responsive mt-5 w-75 mx-auto">
+      <table class="table table-responsive mt-5 mx-auto">
         <thead>
           <tr>
             <th scope="col"></th>
