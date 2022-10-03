@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 
 import axios from "axios";
 // import classes from "./FindAgent.module.css";
@@ -47,7 +48,7 @@ export default function FindAgent() {
   };
 
   return (
-    <div>
+    <Container>
       <SearchBarFindAgent
         setLocation={setLocation}
         setAgentName={setAgentName}
@@ -57,6 +58,6 @@ export default function FindAgent() {
       />
       {/* {show && <AgentsContainer data={data} />} */}
       <AgentsContainer data={data} />
-    </div>
+    </Container>
   );
 }
