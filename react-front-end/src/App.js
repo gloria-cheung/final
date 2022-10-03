@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 import TopBar from "./components/TopBar";
 import Home from "./components/Home/Home";
@@ -35,7 +35,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/find-an-agent" element={<FindAgent />} />
-          <Route path="/profile/:username" element={<AgentProfile />} />
+          <Route path="profile">
+            <Route path=":userId" element={<AgentProfile />} />
+          </Route>
         </Route>
       </Routes>
     </div>

@@ -1,14 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Aside from "./Aside";
 import AgentHeading from "./AgentHeading";
 import classes from "./AgentProfile.module.css";
 import AgentAboutMe from "./AgentAboutMe";
 import AgentForSale from "./AgentForSale";
+import axios from "axios";
 // import AgentReviewsContainer from "./AgentReviewsContainer";
 // import AgentReview from "./AgentReview";
+import { useParams } from "react-router-dom";
 
 export default function AgentProfile() {
+  const { userId } = useParams();
+  const [data, setData] = useState({});
+
+  function fetchData() {
+    const options = {
+      method: "GET",
+      url: "https://zillow56.p.rapidapi.com/agent",
+      params: { username: userId },
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Host": "zillow56.p.rapidapi.com",
+      },
+    };
+    axios
+      .request(options)
+      .then((res) => {
+        setData(res.data);
+      })
+      .then(console.log(data))
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <React.Fragment>
       <Container className={classes.container}>
