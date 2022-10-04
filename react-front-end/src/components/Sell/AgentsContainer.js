@@ -19,7 +19,7 @@ export default function AgentsContainer({ data }) {
   }
   return (
     <React.Fragment>
-      <table class="table table-responsive mt-5 mx-auto">
+      <table className="table table-responsive mt-5 mx-auto">
         {agents && (
           <thead>
             <tr>
