@@ -7,7 +7,9 @@ export default function AgentsContainerItem(props) {
   return (
     <tr>
       <th scope="row">
-        <img src={agentImg} alt="agent" style={{ borderRadius: "50%" }} />
+
+        <img src={agentImg} style={{ borderRadius: "50%" }} alt="agentImage" />
+
       </th>
       <td className="text-center">
         <h6 className="mt-5">{agentName}</h6>
@@ -15,7 +17,9 @@ export default function AgentsContainerItem(props) {
         <div>{agentGroup}</div>
       </td>
       <td>
+
         <img src={mapImg} alt="location" className="mt-2" />
+
       </td>
       <td>
         <h1 className="mt-5">

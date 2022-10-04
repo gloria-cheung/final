@@ -73,7 +73,7 @@ export default function ListingItem(props) {
         as="li"
         className="listingItem d-flex justify-content-between align-items-start"
       >
-        <div className="ms-2">
+        <div className="ms-2 listingInfo">
           <div className="fw-bold d-flex">
             {streetAddress}, {city}, {state}, {zipcode}
           </div>

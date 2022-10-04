@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
+import Loading from "../Loading";
 import MapContainer from "./MapContainer";
 import ListingContainer from "./ListingContainer";
 import { Row, Container, Col } from "react-bootstrap";
@@ -17,6 +18,7 @@ export default function Homes_Rent() {
     isCondo: true,
     isTownhouse: true,
   });
+  const [loading, setLoading] = useState(false);
   const [markers, setMarkers] = useState([]);
 
   const fetchData = () => {
@@ -50,6 +52,10 @@ export default function Homes_Rent() {
         }));
         setMarkers(markersArr);
         setData(res.data.results);
+        setLoading(false);
+      })
+      .then(() => {
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
@@ -58,6 +64,7 @@ export default function Homes_Rent() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoading(true);
     fetchData();
   };
 
@@ -71,6 +78,7 @@ export default function Homes_Rent() {
         setHomeType={setHomeType}
       />
       <Row className="p-0 m-0 border-top">
+        {loading && <Loading />}
         <Col>{markers.length > 0 && <MapContainer markers={markers} />}</Col>
         <Col>
           <ListingContainer data={data} />

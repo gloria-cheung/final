@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 
 import axios from "axios";
 import SearchBarFindAgent from "./SearchBarFindAgent";
 import AgentsContainer from "./AgentsContainer";
+import Loading from "../Loading";
 
 export default function FindAgent() {
   const [location, setLocation] = useState("");
@@ -11,6 +13,7 @@ export default function FindAgent() {
   const [language, setLanguage] = useState("English");
   const [data, setData] = useState({});
   const [show, setShow] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
     const options = {
@@ -32,6 +35,7 @@ export default function FindAgent() {
       .request(options)
       .then((res) => {
         setData(res.data);
+        setLoading(false);
       })
       .then(setShow(true))
       .then(console.log(data))
@@ -42,11 +46,12 @@ export default function FindAgent() {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    setLoading(true);
     fetchData();
   };
 
   return (
-    <div>
+    <Container>
       <SearchBarFindAgent
         setLocation={setLocation}
         setAgentName={setAgentName}
@@ -56,6 +61,6 @@ export default function FindAgent() {
         show={show}
       />
       <AgentsContainer data={data} />
-    </div>
+    </Container>
   );
 }
