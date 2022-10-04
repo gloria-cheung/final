@@ -35,7 +35,9 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/find-an-agent" element={<FindAgent />} />
-          <Route path="/profile/:username" element={<AgentProfile />} />
+          <Route path="profile">
+            <Route path=":userId" element={<AgentProfile />} />
+          </Route>
         </Route>
       </Routes>
     </div>

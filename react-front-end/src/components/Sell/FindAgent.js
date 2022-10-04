@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 
 import axios from "axios";
-// import classes from "./FindAgent.module.css";
 import SearchBarFindAgent from "./SearchBarFindAgent";
 import AgentsContainer from "./AgentsContainer";
 import Loading from "../Loading";
@@ -59,9 +58,8 @@ export default function FindAgent() {
         setSpecialties={setSpecialties}
         setLanguage={setLanguage}
         submitHandler={submitHandler}
+        show={show}
       />
-      {loading && <Loading />}
-      {/* {show && <AgentsContainer data={data} />} */}
       <AgentsContainer data={data} />
     </Container>
   );
