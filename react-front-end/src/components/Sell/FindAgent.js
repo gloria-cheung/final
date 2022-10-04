@@ -60,6 +60,7 @@ export default function FindAgent() {
         submitHandler={submitHandler}
         show={show}
       />
+      {loading && <Loading />}
       <AgentsContainer data={data} />
     </Container>
   );
