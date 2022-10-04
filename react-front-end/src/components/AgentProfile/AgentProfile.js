@@ -8,9 +8,10 @@ import AgentForSale from "./AgentForSale";
 import axios from "axios";
 // import AgentReviewsContainer from "./AgentReviewsContainer";
 // import AgentReview from "./AgentReview";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function AgentProfile() {
+  const navigate = useNavigate();
   const { userId } = useParams();
   const [data, setData] = useState();
 
@@ -29,6 +30,7 @@ export default function AgentProfile() {
       .then((res) => {
         setData(res.data);
       })
+
       .catch((error) => {
         console.error(error);
       });
@@ -54,14 +56,11 @@ export default function AgentProfile() {
             Contact Agent
           </Button>
           <Row>
-            <Aside />
+            <Aside data={data} />
           </Row>
         </Row>
         <Row className="mt-5">
-          <AgentAboutMe />
-        </Row>
-        <Row className="mt-5">
-          <AgentForSale />
+          <AgentAboutMe data={data} />
         </Row>
         {/* <Row className="mt-5">
           <AgentReviewsContainer />
