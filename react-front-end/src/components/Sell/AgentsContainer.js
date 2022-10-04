@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./AgentsContainer.module.css";
 import AgentsContainerItem from "./AgentsContainerItem";
 import { v4 as uuidv4 } from "uuid";
 

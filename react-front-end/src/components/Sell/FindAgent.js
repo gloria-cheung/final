@@ -54,6 +54,7 @@ export default function FindAgent() {
         setSpecialties={setSpecialties}
         setLanguage={setLanguage}
         submitHandler={submitHandler}
+        show={show}
       />
       {/* {show && <AgentsContainer data={data} />} */}
       <AgentsContainer data={data} />

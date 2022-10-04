@@ -4,14 +4,13 @@ import Aside from "./Aside";
 import AgentHeading from "./AgentHeading";
 import classes from "./AgentProfile.module.css";
 import AgentAboutMe from "./AgentAboutMe";
-import AgentForSale from "./AgentForSale";
+
 import axios from "axios";
 // import AgentReviewsContainer from "./AgentReviewsContainer";
 // import AgentReview from "./AgentReview";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function AgentProfile() {
-  const navigate = useNavigate();
   const { userId } = useParams();
   const [data, setData] = useState();
 

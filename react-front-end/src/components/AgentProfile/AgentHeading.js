@@ -9,6 +9,7 @@ export default function AgentHeading(props) {
       <Row>
         <Col xs={12}>
           <img
+            alt="agent"
             style={{
               height: "12rem",
               borderRadius: "50%",

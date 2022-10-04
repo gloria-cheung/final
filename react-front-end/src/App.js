@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 import TopBar from "./components/TopBar";
 import Home from "./components/Home/Home";
