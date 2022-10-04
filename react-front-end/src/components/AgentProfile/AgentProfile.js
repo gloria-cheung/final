@@ -4,10 +4,7 @@ import Aside from "./Aside";
 import AgentHeading from "./AgentHeading";
 import classes from "./AgentProfile.module.css";
 import AgentAboutMe from "./AgentAboutMe";
-
 import axios from "axios";
-// import AgentReviewsContainer from "./AgentReviewsContainer";
-// import AgentReview from "./AgentReview";
 import { useParams } from "react-router-dom";
 
 export default function AgentProfile() {
@@ -46,9 +43,6 @@ export default function AgentProfile() {
           <Col xs={12}>
             <AgentHeading data={data} />
           </Col>
-          {/* <Col xs={6}>
-            <Aside />
-          </Col> */}
         </Row>
         <Row className="mt-3">
           <Button variant="primary" size="lg" className="mx-auto">
@@ -61,10 +55,6 @@ export default function AgentProfile() {
         <Row className="mt-5">
           <AgentAboutMe data={data} />
         </Row>
-        {/* <Row className="mt-5">
-          <AgentReviewsContainer />
-          <AgentReview />
-        </Row> */}
       </Container>
       <Row className="mt-5">
         <h2>Reviews & Ratings</h2>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import axios from "axios";
-// import classes from "./FindAgent.module.css";
 import SearchBarFindAgent from "./SearchBarFindAgent";
 import AgentsContainer from "./AgentsContainer";
 
@@ -56,7 +55,6 @@ export default function FindAgent() {
         submitHandler={submitHandler}
         show={show}
       />
-      {/* {show && <AgentsContainer data={data} />} */}
       <AgentsContainer data={data} />
     </div>
   );
