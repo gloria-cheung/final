@@ -123,7 +123,7 @@ export default function ModalContent(props) {
               {data.attributionInfo && currentUser ? (
                 <ContactAgent
                   zpid={data.zpid}
-                  attributionInfo={data.attributionInfo}
+                  agentName={data.attributionInfo.agentName}
                 />
               ) : (
                 ""
