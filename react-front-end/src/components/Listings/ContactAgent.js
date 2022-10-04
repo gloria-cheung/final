@@ -10,7 +10,7 @@ export default function ContactAgent(props) {
     isSubmitted: false,
   });
 
-  const { zpid, attributionInfo } = props;
+  const { zpid, agentName } = props;
 
   const fetchSMS = () => {
     axios
@@ -73,9 +73,7 @@ export default function ContactAgent(props) {
     <Card>
       <Card.Body>
         <Card.Title>Contact Agent</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">
-          {attributionInfo.agentName}
-        </Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">{agentName}</Card.Subtitle>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3">
             <Form.Label>Full Name</Form.Label>
