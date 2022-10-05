@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Alert } from "react-bootstrap";
 
 import axios from "axios";
 import SearchBarFindAgent from "./SearchBarFindAgent";
@@ -14,6 +14,7 @@ export default function FindAgent() {
   const [data, setData] = useState({});
   const [show, setShow] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchData = () => {
     const options = {
@@ -34,6 +35,9 @@ export default function FindAgent() {
     axios
       .request(options)
       .then((res) => {
+        if (error) {
+          setError(false);
+        }
         setData(res.data);
         setLoading(false);
       })
@@ -41,6 +45,8 @@ export default function FindAgent() {
       .then(console.log(data))
       .catch((error) => {
         console.error(error);
+        setError(true);
+        setLoading(false);
       });
   };
 
@@ -61,7 +67,13 @@ export default function FindAgent() {
         show={show}
       />
       {loading && <Loading />}
-      <AgentsContainer data={data} />
+      {error ? (
+        <Alert className="mt-3" variant="primary">
+          Error. Please Try Again
+        </Alert>
+      ) : (
+        <AgentsContainer data={data} />
+      )}
     </Container>
   );
 }

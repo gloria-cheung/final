@@ -2,7 +2,7 @@ import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function AgentsContainerItem(props) {
-  const { phoneNumber, agentName, agentGroup, mapImg, agentImg } = props;
+  const { phoneNumber, agentName, agentGroup, mapImg, agentImg, agentUserName } = props;
 
   return (
     <tr>
@@ -23,7 +23,7 @@ export default function AgentsContainerItem(props) {
       </td>
       <td>
         <h1 className="mt-5">
-          <FaLongArrowAltRight />
+          <a href={agentUserName}><FaLongArrowAltRight /></a>
         </h1>
       </td>
     </tr>

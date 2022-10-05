@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import Aside from "./Aside";
 import AgentHeading from "./AgentHeading";
-import classes from "./AgentProfile.module.css";
 import AgentAboutMe from "./AgentAboutMe";
+import ContactAgent from "../Listings/ContactAgent";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 export default function AgentProfile() {
   const { userId } = useParams();
   const [data, setData] = useState();
+  const [show, setShow] = useState(false);
 
   function fetchData() {
     const options = {
@@ -36,16 +37,28 @@ export default function AgentProfile() {
     fetchData();
   }, []);
 
+  const handleShow = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+  };
+  console.log(data);
   return (
     <React.Fragment>
-      <Container className={classes.container}>
+      <Container>
         <Row>
           <Col xs={12}>
             <AgentHeading data={data} />
           </Col>
         </Row>
         <Row className="mt-3">
-          <Button variant="primary" size="lg" className="mx-auto">
+          <Button
+            variant="primary"
+            size="lg"
+            className="mx-auto"
+            onClick={handleShow}
+          >
             Contact Agent
           </Button>
           <Row>
@@ -60,6 +73,9 @@ export default function AgentProfile() {
         <h2>Reviews & Ratings</h2>
         <div>Placeholder for Reviews</div>
       </Row>
+      <Modal show={show} onHide={handleClose}>
+        {data && <ContactAgent agentName={data.displayUser.name} />}
+      </Modal>
     </React.Fragment>
   );
 }

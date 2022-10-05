@@ -14,6 +14,7 @@ export default function AgentsContainer({ data }) {
         agentGroup={agent.map.businessName}
         mapImg={agent.map.image.src}
         agentImg={agent.contact.graphic.image.src}
+        agentUserName={agent.href}
       />
     ));
   }

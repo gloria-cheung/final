@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Aside from "./Aside";
 
 export default function AgentHeading(props) {
   const { data } = props;
