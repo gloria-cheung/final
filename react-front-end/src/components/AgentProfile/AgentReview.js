@@ -1,22 +1,51 @@
 import React from "react";
 
-export default function AgentReview() {
+import "./AgentReview.scss";
+
+export default function AgentReview(props) {
+  const { name, workDone, reviewBody, reviewBodyExtra } = props;
   return (
-    <React.Fragment>
-      <hr />
-      <h4>Highly likely to recommend | 5.0 ⭐️</h4>
-      <div>01/01/2020 - username</div>
-      <div>⭐️⭐️⭐️⭐️⭐️ Local knowledge</div>
-      <div>⭐️⭐️⭐️⭐️⭐️ Process expertise</div>
-      <div>⭐️⭐️⭐️⭐️⭐️ Responsiveness</div>
-      <div>⭐️⭐️⭐️⭐️⭐️ Negotiation skills</div>
-      <div className="mt-1">
-        Lick plastic bags attack curtains ð•„ð”¼ð•†ð•Ž wake up human for food at
-        4am. Plop down in the middle where everybody walks. Burrow under covers
-        i could pee on this if i had the energy but mouse and dead stare with
-        ears cocked so scratch my tummy actually i hate you now
+    <>
+      <div className="reviewContainer">
+        <h5>
+          Highly likely to recommend | 5.0{" "}
+          <span role="img" aria-labelledby="star">
+            ⭐️
+          </span>{" "}
+        </h5>
+        <div>{name}</div>
+        <div>{workDone}</div>
+        <br />
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Local Knowledge
+        </div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Process Expertise
+        </div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Responsiveness
+        </div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Negotiation Skills
+        </div>
+        <br />
+        <div className="reviewBody">
+          {reviewBody}
+          {reviewBodyExtra}
+        </div>
       </div>
-      <hr />
-    </React.Fragment>
+    </>
   );
 }
