@@ -3,7 +3,7 @@ import React from "react";
 import "./AgentReview.scss";
 
 export default function AgentReview(props) {
-  const { name, workDone, reviewBody } = props;
+  const { name, workDone, reviewBody, reviewBodyExtra } = props;
   return (
     <>
       <div className="reviewContainer">
@@ -16,7 +16,10 @@ export default function AgentReview(props) {
         <div>⭐️⭐️⭐️⭐️⭐️ - Responsiveness</div>
         <div>⭐️⭐️⭐️⭐️⭐️ - Negotiation Skills</div>
         <br />
-        <div className="reviewBody">{reviewBody}</div>
+        <div className="reviewBody">
+          {reviewBody}
+          {reviewBodyExtra}
+        </div>
       </div>
     </>
   );
