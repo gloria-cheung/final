@@ -7,14 +7,39 @@ export default function AgentReview(props) {
   return (
     <>
       <div className="reviewContainer">
-        <h5>Highly likely to recommend | 5.0 ⭐️ </h5>
+        <h5>
+          Highly likely to recommend | 5.0{" "}
+          <span role="img" aria-labelledby="star">
+            ⭐️
+          </span>{" "}
+        </h5>
         <div>{name}</div>
         <div>{workDone}</div>
         <br />
-        <div>⭐️⭐️⭐️⭐️⭐️ - Local Knowledge</div>
-        <div>⭐️⭐️⭐️⭐️⭐️ - Process Expertise</div>
-        <div>⭐️⭐️⭐️⭐️⭐️ - Responsiveness</div>
-        <div>⭐️⭐️⭐️⭐️⭐️ - Negotiation Skills</div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Local Knowledge
+        </div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Process Expertise
+        </div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Responsiveness
+        </div>
+        <div>
+          <span role="img" aria-labelledby="star">
+            ⭐️⭐️⭐️⭐️⭐️
+          </span>
+          - Negotiation Skills
+        </div>
         <br />
         <div className="reviewBody">
           {reviewBody}
@@ -23,42 +48,4 @@ export default function AgentReview(props) {
       </div>
     </>
   );
-}
-
-{
-  /* <React.Fragment>
-      <hr />
-      <Row>
-        <h5>Highly likely to recommend | 5.0 ⭐️</h5>
-      </Row>
-      <Row>
-        <div>"reviewerDisplayName"</div>
-      </Row>
-      <Row>
-        <div>"revieweeWorkDone"</div>
-      </Row>
-      <Row className="mt-2">
-        <div>⭐️⭐️⭐️⭐️⭐️ - Local Knowledge</div>
-      </Row>
-      <Row>
-        <div>⭐️⭐️⭐️⭐️⭐️ - Process Expertise</div>
-      </Row>
-      <Row>
-        <div>⭐️⭐️⭐️⭐️⭐️ - Responsiveness</div>
-      </Row>
-      <Row>
-        <div>⭐️⭐️⭐️⭐️⭐️ - Negotiation Skills</div>
-      </Row>
-      <Row>
-        <div>
-          This is my second time I have sold a house with Katrina. She did an
-          outstanding job once again with communication, representation, and
-          marketing to ensure I had good exposure. By keeping a finger on the
-          pulse of our area real estate activity, she was able provide me with
-          professional sound advice to optimize the sale of my home. Would
-          highly recommend her services.
-        </div>
-      </Row>
-      <hr className="mt-2" />
-    </React.Fragment> */
 }
