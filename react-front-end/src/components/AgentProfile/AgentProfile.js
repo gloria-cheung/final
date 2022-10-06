@@ -6,11 +6,14 @@ import AgentAboutMe from "./AgentAboutMe";
 import ContactAgent from "../Listings/ContactAgent";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import AgentReview from "./AgentReview";
+import { v4 as uuidv4 } from "uuid";
 
 export default function AgentProfile() {
   const { userId } = useParams();
   const [data, setData] = useState();
   const [show, setShow] = useState(false);
+  const [reviewData, setReviewData] = useState();
 
   function fetchData() {
     const options = {
@@ -26,6 +29,7 @@ export default function AgentProfile() {
       .request(options)
       .then((res) => {
         setData(res.data);
+        setReviewData(res.data.reviewsData.reviews);
       })
 
       .catch((error) => {
@@ -36,6 +40,19 @@ export default function AgentProfile() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  let reviews;
+
+  if (reviewData) {
+    reviews = reviewData.map((review) => (
+      <AgentReview
+        key={uuidv4()}
+        name={review.reviewerDisplayName}
+        workDone={review.revieweeWorkDone}
+        reviewBody={review.reviewBodyMain}
+      />
+    ));
+  }
 
   const handleShow = () => {
     setShow(true);
@@ -68,11 +85,12 @@ export default function AgentProfile() {
         <Row className="mt-5">
           <AgentAboutMe data={data} />
         </Row>
+
+        <Row className="mt-5">
+          <h2>Reviews & Ratings</h2>
+          {reviews}
+        </Row>
       </Container>
-      <Row className="mt-5">
-        <h2>Reviews & Ratings</h2>
-        <div>Placeholder for Reviews</div>
-      </Row>
       <Modal show={show} onHide={handleClose}>
         {data && <ContactAgent agentName={data.displayUser.name} />}
       </Modal>
