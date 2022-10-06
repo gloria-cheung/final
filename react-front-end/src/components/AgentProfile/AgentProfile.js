@@ -50,6 +50,7 @@ export default function AgentProfile() {
         name={review.reviewerDisplayName}
         workDone={review.revieweeWorkDone}
         reviewBody={review.reviewBodyMain}
+        reviewBodyExtra={review.reviewBodyExtra}
       />
     ));
   }
