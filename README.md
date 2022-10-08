@@ -1,48 +1,65 @@
-# React + Express No-Fluff Boilerplate
+# Home Finder
 
-A boilerplate project for anyone interested in making a project that uses React and Express.
+Home Finder is an app created with Node.js and React that allows users to view homes for sale or rent and to connect with listing agents to their sell existing homes. Twilio and Zillow APIs are used to fetch live data.
 
-This repository is a bootleg of @NimaBoscarino's [React Rails Boilerplate](https://github.com/NimaBoscarino/react-rails-boilerplate). It uses the same React app, but replaces the Rails server with an Express server.
+## Final Product
 
-Note! This boilerplate has _no fluff_! That means that there's nothing set up for you to do authentication stuff, there's no Redux stuff, and there's no React Router stuff. On the Express end, there is no session storage or database connection.
+### Demo Video
 
-The main important bit is that the React project has `proxy` set to `localhost:8080` in the `package.json` file, and that the Express app listens to port 8080 in `server.js`. Take a look!
+!["demo video"](./public/home_finder.gif)
 
-You can (and perhaps should) rename the directories `express-back-end` and `react-front-end` if you want-- The name doesn't matter.
+### Listings For Rent
 
-## Running the projects
+!["listings for rent"](./public/listings_for_rent.png)
 
-You need **TWO** terminal windows/tabs for this (or some other plan for running two Node processes).
+### Listing Details
 
-In one terminal, `cd` into `react-front-end`. Run `npm install` or `yarn` to install the dependencies. Then run `npm start` or `yarn start`, and go to `localhost:3000` in your browser.
+!["listing details"](./public/listing_details.png)
 
-In the other terminal, `cd` into `express-back-end`. Run `npm install` or `yarn` to install the dependencies, then `npm start` or `yarn start` to launch the server.
+### Sell Home Page
 
-In the browser, you can click on the button and see the data get loaded.
+!["sell index"](./public/sell_index.png)
 
-If this doesn't work, please message me!
+### Listing Agents
 
-## Next steps
+!["available agents"](./public/agents_index.png)
 
-From here, you can start working on your project!
+### Agent Profile
 
-As soon as the dependencies are installed, your Express server can serve JSON and static assets (like images) in response to API calls from the React app. You can get started on developing your React app, routing plan, etc. right away! Any request that isn't handled by React is passed on to the Express server. That means that you can call a route like `/api/users` from React using `fetch`, `axios`, or something else, and Express will receive it as though they originated from the same app. For routing, best practice is to namespace all of your data routes to `/api`, so that they don't clash with other routing schemes, like React Router.
+!["agent profile"](./public/agent_profile.png)
 
-At some point, you'll likely want to install and configure a database driver for Postgres or MongoDB-- Refer to past projects for hints on how to do this.
+Install dependencies with `npm install`.
 
-And don't forget to update the README!
+## Setup
+- Set up .env file using .env.example file inside express-back-end directory 
+(set up account with Twilio)
+- Set up .env file using .env.example file inside react-front-end directory (set up account with firebase, zillow rapid api, google maps api)
+- Navigate to express-back-end directory and install dependencies with `npm install`
+- Navigate to react-front-end directory and install dependencies with `npm install`
+- Once dependencies are installed, open 2 terminals and run following command from root directory of express-back-end and react-front-end `npm start`
+- Go to localhost:3030
 
-## Example Projects
+## Project Stack
 
-You might want to look at examples of projects that have used this boilerplate for hints on how to extend it. Here are a few:
+- Front-End: React, Axios, JSX, HTML, SASS, JavaScript, Bootstrap
 
-- [Later Cart](https://github.com/bonitac/later-cart)
-- [Buddi.io](https://github.com/Danny-Tran/buddi.io)
+- Back-End: Express, Node.js, Firebase
 
-If you'd like your project added to the list, please shoot me a message.
+- API: Zillow, Google Map, Twilio
 
-## Contact
+## Dependencies
 
-Please contact me on Slack (@garrettgsb) or Nima at `nima@lighthouselabs.com` if you have any questions, requests, or feedback, or post an issue to this repo. If you are using the boilerplate, I'd love to hear from you as well!
-
-.
+- React
+- React-dom
+- React-scripts
+- Axios
+- React Bootstrap
+- Firebase
+- Node SASS
+- React-router-dom
+- UUID
+- React Google Maps API
+- BcryptJS
+- Dotenv
+- Express
+- Twilio
