@@ -31,8 +31,9 @@ Home Finder is an app created with Node.js and React that allows users to view h
 Install dependencies with `npm install`.
 
 ## Setup
-- Set up .env file using .env.example file inside express-back-end directory 
-(set up account with Twilio)
+
+- Set up .env file using .env.example file inside express-back-end directory
+  (set up account with Twilio)
 - Set up .env file using .env.example file inside react-front-end directory (set up account with firebase, zillow rapid api, google maps api)
 - Navigate to express-back-end directory and install dependencies with `npm install`
 - Navigate to react-front-end directory and install dependencies with `npm install`
@@ -59,7 +60,6 @@ Install dependencies with `npm install`.
 - React-router-dom
 - UUID
 - React Google Maps API
-- BcryptJS
 - Dotenv
 - Express
 - Twilio
