@@ -51,6 +51,12 @@ export default function AgentProfile() {
         workDone={review.revieweeWorkDone}
         reviewBody={review.reviewBodyMain}
         reviewBodyExtra={review.reviewBodyExtra}
+        overallRatingDescription={review.overallRating.description}
+        overallRating={review.overallRating.amount}
+        localKnowledgeRating={review.subRatings[0].amount}
+        processExpertiseRating={review.subRatings[1].amount}
+        responsivenessRating={review.subRatings[2].amount}
+        negotiationSkillsRating={review.subRatings[3].amount}
       />
     ));
   }
