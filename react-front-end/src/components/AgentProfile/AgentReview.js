@@ -21,7 +21,7 @@ export default function AgentReview(props) {
     if (amount === "400") return "⭐️⭐️⭐️⭐️";
     if (amount === "300") return "⭐️⭐️⭐️";
     if (amount === "200") return "⭐️⭐️";
-    if (amount == "100") return "⭐️";
+    if (amount === "100") return "⭐️";
   };
 
   return (
