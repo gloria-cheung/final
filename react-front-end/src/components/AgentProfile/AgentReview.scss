@@ -2,6 +2,64 @@
   text-align: left;
 }
 
+.reviewContainer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.starsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  // background-color: red;
+}
+
+.localKnowledge {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40%;
+  margin-right: 40%;
+
+  @media (max-width: 1390px) {
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+
+  @media (max-width: 1024px) {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  @media (max-width: 518px) {
+    margin-left: 22.5%;
+    margin-right: 22.5%;
+  }
+
+  @media (max-width: 425px) {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  @media (max-width: 375px) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  @media (max-width: 310px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.heading {
+  text-align: left;
+}
+
 // .reviewContainer {
 //   margin-left: 20%;
 //   margin-right: 20%;
