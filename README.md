@@ -63,3 +63,12 @@ Install dependencies with `npm install`.
 - Dotenv
 - Express
 - Twilio
+
+## Connect With Us
+
+### Gloria Cheung
+
+[Github](https://github.com/gloria-cheung) -- [Linkedin](http://www.linkedin.com/in/gloria-cheung) -- [Portfolio](http://www.gloria-cheung.com)
+
+### Brian Nguyen
+[Github](https://github.com/brianguyen97) -- [Linkedin](http://www.linkedin.com/in/) 
